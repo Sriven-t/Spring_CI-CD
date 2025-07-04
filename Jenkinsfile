@@ -1,3 +1,5 @@
+echo '🔍 Jenkins lit bien le bon Jenkinsfile depuis GitHub'
+
 pipeline {
   agent any
 
