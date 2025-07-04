@@ -99,7 +99,7 @@ pipeline {
 EOF'''
       
       // Utilise le nouveau settings.xml et corrige la syntaxe du repository
-     sh 'mvn deploy -B -s settings.xml -DaltDeploymentRepository=nexus::${NEXUS_URL}'
+     sh "mvn deploy -B -s settings.xml -DaltDeploymentRepository=nexus::${env.NEXUS_URL}"
     }
   }
 }
