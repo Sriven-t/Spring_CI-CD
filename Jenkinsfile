@@ -60,11 +60,9 @@ pipeline {
           passwordVariable: 'DOCKER_PASS'
         )]) {
           sh '''
-            echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
-            docker build -t $DOCKER_USER/demoapp:${GIT_COMMIT} .
-            docker push $DOCKER_USER/demoapp:${GIT_COMMIT}
-            docker tag $DOCKER_USER/demoapp:${GIT_COMMIT} $DOCKER_USER/demoapp:latest
-            docker push $DOCKER_USER/demoapp:latest
+              echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
+              docker build -t $DOCKER_USER/demoapp:latest .
+              docker push $DOCKER_USER/demoapp:latest
           '''
         }
       }
